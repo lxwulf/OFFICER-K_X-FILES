@@ -4,7 +4,7 @@ date = 2022-01-23
 weight = 1
 +++
 
-<p class="profil"><img src="profil_op.svg"></img></p>
+<p class="profil"><img src="../../about/profil_op.svg"></img></p>
 
 # Long version about me
 

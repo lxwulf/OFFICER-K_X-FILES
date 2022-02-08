@@ -45,7 +45,6 @@ situations.
         "Redhat Bugzilla": "lxwulf",
         "IRC": "lxwulf",
         "Discord": "LxWulf#9690"
-        ""
       },
       "My Favorites": {
         "Land": "Hong Kong",
@@ -63,4 +62,4 @@ situations.
 
 hey psst!...
 
-[Long version about me](../about/more_about_me.md)
+[Long version about me](../more/more-about-me/index.html)
