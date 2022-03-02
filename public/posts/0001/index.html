@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="description" content="(Un)solved case collections">
+        
+       
+        <title>Officer K&#x27;s X-Files</title>
+
+        
+            <link rel="stylesheet" href="/theme.css">
+        
+        
+    </head>
+    <body>
+        <div class="content">
+        
+        
+            <header>
+                <div class="header-left">
+                    <a href="&#x2F;" class="logo">Officer K&#x27;s X-Files</a>
+                </div>
+                <div class="header-right">
+                    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                      <ul>
+                        
+                        
+                            
+                            <li class="nav">
+                                <a itemprop="url" href="/posts/">
+                                    <span itemprop="name">Posts</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav">
+                                <a itemprop="url" href="/about/">
+                                    <span itemprop="name">About me</span>
+                                </a>
+                            </li>
+                        
+                        
+                        <li class="nav">
+                            <a itemprop="url" href="https://github.com/lxwulf" target="_blank">
+                                <img class="icon" src="&#x2F;icons/github.svg" alt="Github">
+                            </a>
+                        </li>
+                        
+<!--                        -->
+                      </ul>
+                    </nav>
+                </div>
+            </header>
+        
+        
+        <main>
+            
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <div itemprop="headline">
+        <h1>#0001 | Something between laziness and geniuses</h1>
+        <div class="border"></div>
+        <time datetime="2022-01-17" class="date" itemprop="datePublished">
+            Officer K | 17 Jan 2022
+        </time>
+    </div>
+    <div itemprop="articleBody">
+        <p>Here it is, my new website. It is of course not perfect but a beginning.
+You need to start somewhere, right? After that, you can develop further.
+I have a lot of new Ideas I want to implement but step by step. At the
+moment it stays, it is.</p>
+<p>When you look at the source code, you may find some horrible things -
+yes, the site is generated with a <code>static site generator</code>, shortly
+<code>ssg</code>. It was handy for me, needed only some minimal <code>html</code> and <code>css</code>
+files, the rest in is in <code>markdown</code>.</p>
+<p>Just a small summary of how it works.</p>
+<h2 id="how-does-it-work-screwdriver">How does it work? 🪛</h2>
+<p>I have two main <code>html</code> files.</p>
+<blockquote>
+<p>_header.html</p>
+</blockquote>
+<p>and</p>
+<blockquote>
+<p>_footer.html</p>
+</blockquote>
+<p>In it, I have just the general code for a <code>header</code> and a <code>footer</code>,
+obviously.</p>
+<p>Ah, I forgot, of course you also need one <code>css</code> file. In my case, it
+nothing complicated and maybe copied from here and there.</p>
+<blockquote>
+<p>style.css</p>
+</blockquote>
+<p>Then we can already generate the website with the <code>ssg</code>. I decided to
+use an easy <a href="https://www.romanzolotarev.com/ssg.html">one</a> by Roman
+Zolotarev. It is even slightly modified because it doesn't render
+Markdown lists. So when you also wanna use this <code>ssg-script</code> then you
+can add following code to it somewhere between the different functions.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#8fa1b3;">render_article_list</span><span style="color:#c0c5ce;">() {
+    </span><span style="color:#bf616a;">urls</span><span style="color:#c0c5ce;">=&quot;$</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;">&quot;
+    </span><span style="color:#bf616a;">base_url</span><span style="color:#c0c5ce;">=&quot;$</span><span style="color:#bf616a;">2</span><span style="color:#c0c5ce;">&quot;
+    </span><span style="color:#bf616a;">items</span><span style="color:#c0c5ce;">=&quot;&quot;
+    </span><span style="color:#b48ead;">for</span><span style="color:#c0c5ce;"> i </span><span style="color:#b48ead;">in </span><span style="color:#c0c5ce;">$</span><span style="color:#bf616a;">1</span><span style="color:#c0c5ce;">; </span><span style="color:#b48ead;">do </span><span style="color:#bf616a;">also 
+        </span><span style="color:#b48ead;">if </span><span style="color:#c0c5ce;">! </span><span style="color:#96b5b4;">echo </span><span style="color:#c0c5ce;">$</span><span style="color:#bf616a;">i </span><span style="color:#c0c5ce;">| </span><span style="color:#bf616a;">grep -Eq </span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">index|contact</span><span style="color:#c0c5ce;">&quot;; </span><span style="color:#b48ead;">then
+            </span><span style="color:#bf616a;">url</span><span style="color:#c0c5ce;">=&quot;$</span><span style="color:#bf616a;">i</span><span style="color:#c0c5ce;">&quot;
+            </span><span style="color:#bf616a;">page_tile</span><span style="color:#c0c5ce;">=$</span><span style="color:#a3be8c;">(</span><span style="color:#bf616a;">head -n</span><span style="color:#a3be8c;"> 1 </span><span style="color:#c0c5ce;">&quot;$</span><span style="color:#bf616a;">4</span><span style="color:#a3be8c;">/</span><span style="color:#c0c5ce;">$</span><span style="color:#a3be8c;">{</span><span style="color:#bf616a;">i</span><span style="color:#c0c5ce;">%</span><span style="color:#96b5b4;">\.</span><span style="color:#a3be8c;">html}.mg</span><span style="color:#c0c5ce;">&quot; | </span><span style="color:#bf616a;">cut -c</span><span style="color:#a3be8c;"> 3-)
+            </span><span style="color:#bf616a;">item</span><span style="color:#c0c5ce;">=&quot;</span><span style="color:#a3be8c;">&lt;li&gt;&lt;a href=</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#c0c5ce;">$</span><span style="color:#a3be8c;">{</span><span style="color:#bf616a;">url</span><span style="color:#a3be8c;">}</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">&gt;</span><span style="color:#c0c5ce;">$</span><span style="color:#a3be8c;">{</span><span style="color:#bf616a;">page_title</span><span style="color:#a3be8c;">}&lt;/a&gt;&lt;/li&gt;</span><span style="color:#c0c5ce;">&quot;
+            </span><span style="color:#bf616a;">items</span><span style="color:#c0c5ce;">=$</span><span style="color:#bf616a;">items</span><span style="color:#c0c5ce;">$</span><span style="color:#bf616a;">item
+        </span><span style="color:#b48ead;">fi
+    done
+    </span><span style="color:#bf616a;">sed -i </span><span style="color:#c0c5ce;">&#39;&#39;</span><span style="color:#bf616a;"> -e </span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">s|&lt;article&gt;|&lt;ul class=</span><span style="color:#c0c5ce;">&quot;articles&quot;</span><span style="color:#a3be8c;">&gt;</span><span style="color:#c0c5ce;">$</span><span style="color:#a3be8c;">{</span><span style="color:#bf616a;">items</span><span style="color:#a3be8c;">}&lt;/ul&gt;&lt;/article&gt;|g</span><span style="color:#c0c5ce;">&quot; &quot;$</span><span style="color:#bf616a;">3</span><span style="color:#a3be8c;">/index.html</span><span style="color:#c0c5ce;">&quot;
+}
+</span></code></pre>
+    </div>
+</article>
+
+        </main>
+        
+        <footer>
+            
+            <div class="border"></div>
+            <div class="footer">
+                <small class="footer-left">
+                    Copyright &copy; Officer K
+                </small>
+                <small class="footer-right">
+                    Powered by <a href="https://www.getzola.org">Zola</a>
+                    | Modded <i>oceanic-zen</i> Theme
+                </small>
+            </div>
+        
+        </footer>
+    
+        </div>
+    </body>
+</html>

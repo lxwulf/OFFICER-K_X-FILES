@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="description" content="(Un)solved case collections">
+        
+       
+        <title>Officer K&#x27;s X-Files</title>
+
+        
+            <link rel="stylesheet" href="/theme.css">
+        
+        
+    </head>
+    <body>
+        <div class="content">
+        
+        
+            <header>
+                <div class="header-left">
+                    <a href="&#x2F;" class="logo">Officer K&#x27;s X-Files</a>
+                </div>
+                <div class="header-right">
+                    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                      <ul>
+                        
+                        
+                            
+                            <li class="nav">
+                                <a itemprop="url" href="/posts/">
+                                    <span itemprop="name">Posts</span>
+                                </a>
+                            </li>
+                        
+                            
+                            <li class="nav">
+                                <a itemprop="url" href="/about/">
+                                    <span itemprop="name">About me</span>
+                                </a>
+                            </li>
+                        
+                        
+                        <li class="nav">
+                            <a itemprop="url" href="https://github.com/lxwulf" target="_blank">
+                                <img class="icon" src="&#x2F;icons/github.svg" alt="Github">
+                            </a>
+                        </li>
+                        
+<!--                        -->
+                      </ul>
+                    </nav>
+                </div>
+            </header>
+        
+        
+        <main>
+            
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <div itemprop="headline">
+        <h1>#0002 | Ah shit, I didnt like it that much...</h1>
+        <div class="border"></div>
+        <time datetime="2022-01-26" class="date" itemprop="datePublished">
+            Officer K | 26 Jan 2022
+        </time>
+    </div>
+    <div itemprop="articleBody">
+        <p>I wasn't happy with my first website. There was something I felt that wasnt
+right. So the new journey or more part two of the journey started. I burned
+hours and hours to find something better and especially easier to maintain.
+I tried alot of different <em>static site generators</em>. Here are a few:</p>
+<ul>
+<li><a href="https://gohugo.io/">Hugo</a></li>
+<li><a href="https://jekyllrb.com/">Jekyll</a></li>
+<li><a href="https://jaspervdj.be/hakyll/">Hakyll</a></li>
+<li><a href="https://www.getzola.org/">Zola</a></li>
+<li><a href="https://vuepress.vuejs.org/">Vuepress</a></li>
+</ul>
+<p>You see, a few came together. Most horrible experience was <em>Jekyll</em>,
+because I had that much of dependencies problems, i lost the overview. Also the
+different versions of the themes made some problems. When i got it done with
+installation, the theme didnt work because of the wrong <em>Jekyll</em> version.
+Downgrading wasnt that easy somehow. At the end after two solstices i decided
+to end that trip.</p>
+<p>Sadly <em>Hugo</em> was a similiar story. <em>Hakyll</em> i didnt even install after i saw
+that this belongs to the Haskell programming language. The last thing I tried
+was <em>Vuepress</em>.</p>
+<p>Besides that <em>Vuepress</em> it relays on <em>Node.js</em>, it was quite interesting how it
+was intended and builded. My problem was there I needed to learn at level zero
+and I didnt have that time to do this. But I think i give that a look for my
+next <em>static site generator hopping</em>.</p>
+<p>So and which one is left? Thats right, it is <em>Zola</em>. The documentation anda
+tutorials on youtube &amp; co. are very nice and easy. So I installed it, you didnt
+believe it but it was just a binary from the official repo, in my case the
+fedora repo.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">dnf</span><span style="color:#c0c5ce;"> install zola
+</span></code></pre>
+<p>This was everything. After that you can start with</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">zola</span><span style="color:#c0c5ce;"> init nameofyourproject
+</span></code></pre>
+<p>and</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">zola</span><span style="color:#c0c5ce;"> serve
+</span></code></pre>
+<p>for a live view on the local machine. For more help you can download one of the
+themes from the community which i also did. You can modified as you want and or
+of course create your on that base or completly new.</p>
+<p>So here it is. My new design for the website before i go to another
+<em>static site generators</em> like <em>vuepress</em> I stay on zola, i really like it.</p>
+
+    </div>
+</article>
+
+        </main>
+        
+        <footer>
+            
+            <div class="border"></div>
+            <div class="footer">
+                <small class="footer-left">
+                    Copyright &copy; Officer K
+                </small>
+                <small class="footer-right">
+                    Powered by <a href="https://www.getzola.org">Zola</a>
+                    | Modded <i>oceanic-zen</i> Theme
+                </small>
+            </div>
+        
+        </footer>
+    
+        </div>
+    </body>
+</html>
